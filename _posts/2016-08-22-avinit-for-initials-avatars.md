@@ -10,24 +10,23 @@ img:
 
 ---
 
-Recently we decided to change our default place holder avatar to use avatar initials.
+Recently we decided to change our default placeholder avatar to use avatar initials.
 
 For instance, if a user is called "Douglas Adams" the avatar should display the user initials as "DA". 
 So, basically we wanted to replace this ![anonymous user avatar]({{page.img.user}}){:style="width:25px"}
-by that ![avatar using name initials]({{page.img.da}}){:style="width:25px"}.
+with this ![avatar using name initials]({{page.img.da}}){:style="width:25px"}.
 
-At first I thought about using [initial.js](http://judelicio.us/initial.js/) to do so as it generates really
-nice avatars, but after thinking a little about it I've changed my mind. The reason is simple, our backend
-currently serves 2 front-ends (and probably will serve more soon) so we definitely don't want to implement that
-avatar logic in each UI.
+At first I thought about using [initial.js](http://judelicio.us/initial.js/) to do so, as it generates really
+nice avatars, but after thinking a little about it I changed my mind. The reason was simple, our backend
+currently serves 2 front-ends (and probably will serve more soon) so we definitely didn't want to have to implement the
+avatar logic for each UI.
 
 After deciding to implement the avatars in Python I've started to look for options that are currently
-maintained and also supported in Python 3. I've came across with [django-initial-avatars][] and also
-with [initials-avatar][] but none of them matched my requirements.
+maintained and also supported in Python 3. I came across [django-initial-avatars][] and [initials-avatar][] but neither matched my requirements.
 
 So, why not implement our own lib?! =)
 
-With that in mind I've started checking how each of the 3 libraries (2 Python and 1 Javascript) implemented
+With that in mind I started checking how each of the 3 libraries (2 Python and 1 Javascript) were implemented
 and the JS implementation was way simpler than the python versions (and generates nicer avatars).
 
 `Avinit` generates exactly the same SVG avatars than `initial.js` using a very simple template (as follows):
@@ -72,7 +71,7 @@ avinit.get_avatar_data_url('Douglas Adams')
 ```
 
 `Avinit` has no dependencies and it's quite simple to use as you can see.
-Patches and welcome so please create a fork and submit your Pull Requests!
+Patches are welcome so please create a fork and submit your Pull Requests!
 
 --
 Sérgio Oliveira (seocam)
