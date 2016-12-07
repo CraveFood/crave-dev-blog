@@ -45,7 +45,7 @@ class Comment(models.Model):
     object_id = models.Charfield(max_length=50)
     content_object = generic.GenericForeignKey('content_type', 'object_id')
     text = models.TextField(blank=True)
- ```
+```
 
 On this model the `text` field is a normal TextField from django, used to store the comment itself.
 The other fields, `content_type`, `object_id` and  `content_objects` are part of the Generic Relation we are adding here. 
