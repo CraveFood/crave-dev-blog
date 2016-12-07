@@ -7,9 +7,9 @@ categories: python django models
 
 ---
 
-As I talked to some people, few new about Django's Generic Relation and Generic Foreign Key. As I studied to apply it on the system, I realised that the documentation can be kind of tricky and sparse. Nevertheless, Generic Relations helped us a lot, and so I decided to write about it in this   
+As I talked to some people, few new about Django's Generic Relation and Generic Foreign Key. And when I was studying it to apply on our system, I realised that the documentation can be kind of tricky and sparse. Nevertheless, Generic Relations helped us a lot, and so I decided to write about it in this blog post :) 
 
-When we have a foreign key, we are linking an instance of another model in this model. Right? So, we can access that other instance and other model very easily. So it would work like this:
+When we have a foreign key, we are linking an instance of another model in the current model. Right? So, we can access that other instance and other model very easily. So it would work like this:
 
 ```python
 class Author(models.Model):
@@ -68,7 +68,7 @@ To create a new comment in a specific book all you need to do is:
  from .models import Book, Comment
  
  book = Book.objects.first()
- text = 'The message Goes Here'
+ text = 'The message goes here'
 
  new_comment = Comment(text=text,
                        content_object=book)
@@ -82,7 +82,7 @@ Or this:
  from .models import Book, Comment
  
  book = Book.objects.first()
- text = 'The message Goes Here'
+ text = 'The message goes here'
  content_type = ContentType.objects.get(app_label='MyShell', model='Books')
   
  new_comment = Comment(text=text,
@@ -91,7 +91,7 @@ Or this:
  new_comment.save()
 ```
 
-So you can first you recover the instance you want to associate your comment with (`book` in this case) and send it as the `content_object` (and Djjango does the magic for you). Or you can get the model you want from the app it is located with the ContentType method and send it to the Comment along with the book id.
+So you can first recover the instance you want to associate your comment with (`book` in this case) and send it as the `content_object` (and Django does the magic for you). Or you can get the model you want from the app it is located with the ContentType method and send it to the Comment along with the book id.
 
 You can do this with the Book model, the Cd model or any other model in any other app you have on your system. You won't need to rewrite this comment to every app or every model you want to add a series of comments.
 
