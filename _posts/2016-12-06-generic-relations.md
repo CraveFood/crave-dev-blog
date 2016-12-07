@@ -53,8 +53,9 @@ The other fields, `content_type`, `object_id` and  `content_objects` are part of
 Instances of ContentType represent and store information about the models installed on your project. 
 Everytime a new model is created, new instances of ContentTypes are automatically created. 
 Here, the `content_type` will be a Foreign Key to the model you want to associate. 
+
 The `object_id`, by the other end, is a simple Charfield that will store an id of an object that 
-is stored in your model. 
+is stored in your model. On the oficial Django documentation, you will find that the suggestion is to use PositiveIntegerField on this field. However, we use uuid as our id fields so we had to change this to Charfield.
 
 You have the model, you have the id of the object you want to access... so the `content_object` will actually represent the instance of that particular object on that particular model. The GenericForeignKey does the magic for you!
 
