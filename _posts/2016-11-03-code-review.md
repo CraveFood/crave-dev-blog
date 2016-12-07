@@ -71,14 +71,5 @@ The major goal of a code review is to have an improvement (or maintenance) of co
 
 However, it is always good to remember that whoever wrote this code you are reviewing is a human being just as yourself. That said, remember that the person could be in a bad day while doing the code, can misunderstand what you wrote in your review or even didn't think about another possible solution for it. Be polite. Never command something. Specially if you are dealing with beginners. If there is something trully bad written or if you thought in a different approach, talk with your collegue in person. Codes are made for machines, but who wrote is very human :)
 
-
-
-
-
-
-
-
-
-
-
-
+--
+Leticia Portella (leportella)
