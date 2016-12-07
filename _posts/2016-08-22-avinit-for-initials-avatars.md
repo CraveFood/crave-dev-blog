@@ -75,7 +75,7 @@ avinit.get_avatar_data_url('Douglas Adams')
 Patches and welcome so please create a fork and submit your Pull Requests!
 
 --
-Sérgio Oliveira (seocam)
+Sérgio Oliveira ([seocam](https://twitter.com/seocam))
 
 [django-initial-avatars]: https://github.com/axiome-oss/django-initial-avatars
 [initials-avatar]: https://github.com/Brightcells/initials-avatar/tree/master/initials_avatar
