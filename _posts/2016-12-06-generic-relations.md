@@ -117,7 +117,7 @@ Done! You can add comments to any Book or Cd instance, are retrieve it by simply
 
 `book.comments.all()`
 
-!(http://i.giphy.com/12NUbkX6p4xOO4.gif)
+![magic](http://i.giphy.com/12NUbkX6p4xOO4.gif)
 
 Another good news is that you can use it in `prefetch_related` to optimize queries with no worries. 
 
