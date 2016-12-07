@@ -69,18 +69,29 @@ To create a new comment in a specific book all you need to do is:
  
  book = Book.objects.first()
  text = 'The message Goes Here'
- content_type = ContentType.objects.get(app_label='MyShell', model='Books')
- content_object = content_type.get_object_for_this_type(id=book.id)
- 
+
  new_comment = Comment(text=text,
-                       content_type=content_type,
-                       object_id=book.id
-                       content_object=content_object)
+                       content_object=book)
  new_comment.save()
 ```
 
-So first you recover the instance you want to associate your comment with (`book` in this case). 
-Then, you get the model you want from the app it is located with the ContentType method. The `content_object` is the instance of book, recovered with the `content_type` you just created. With these information, you are good to go. Add all info on your new comment, and save it. 
+Or this:
+
+```python
+ from django.contrib.contenttypes.models import ContentType
+ from .models import Book, Comment
+ 
+ book = Book.objects.first()
+ text = 'The message Goes Here'
+ content_type = ContentType.objects.get(app_label='MyShell', model='Books')
+  
+ new_comment = Comment(text=text,
+                       content_type=content_type,
+                       object_id=book.id)
+ new_comment.save()
+```
+
+So you can first you recover the instance you want to associate your comment with (`book` in this case) and send it as the `content_object` (and Djjango does the magic for you). Or you can get the model you want from the app it is located with the ContentType method and send it to the Comment along with the book id.
 
 You can do this with the Book model, the Cd model or any other model in any other app you have on your system. You won't need to rewrite this comment to every app or every model you want to add a series of comments.
 
@@ -105,6 +116,8 @@ class Cd(models.Model):
 Done! You can add comments to any Book or Cd instance, are retrieve it by simply doing: 
 
 `book.comments.all()`
+
+!(http://i.giphy.com/12NUbkX6p4xOO4.gif)
 
 Another good news is that you can use it in `prefetch_related` to optimize queries with no worries. 
 
