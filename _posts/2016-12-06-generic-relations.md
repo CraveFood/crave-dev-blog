@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How we used generic relations to add comments to models intances"
+title:  "How we used generic relations to add comments to model intances"
 date:   2016-12-06 22:10:46 -0300
 comments: true
 categories: python django models
