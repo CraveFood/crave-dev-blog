@@ -59,7 +59,7 @@ is stored in your model. On the oficial Django documentation, you will find that
 
 You have the model, you have the id of the object you want to access... so the `content_object` will actually represent the instance of that particular object on that particular model. The GenericForeignKey does the magic for you!
 
-Let's apply this model for something useful. Image that you have models for Books and CDs, and you want to to be able to add comments from your users in each book or cd available on your database.
+Let's apply this model for something useful. Imagine that you have models for Books and CDs, and you want to to be able to add comments from your users in each book or cd available on your database.
 
 To create a new comment in a specific book all you need to do is:
 
