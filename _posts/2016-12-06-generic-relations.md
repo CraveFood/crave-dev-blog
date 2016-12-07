@@ -124,4 +124,4 @@ Another good news is that you can use it in `prefetch_related` to optimize queri
 Hope you liked it and it can be useful for you too :)
 
 --
-Leticia Portella (leportella)
+Leticia Portella ([leportella](https://twitter.com/leleportella))
