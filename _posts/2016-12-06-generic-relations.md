@@ -11,7 +11,7 @@ As I talked to some people, few new about Django's Generic Relation and Generic 
 
 When we have a foreign key, we are linking an instance of another model in this model. Right? So, we can access that other instance and other model very easily. So it would work like this:
 
-```
+```python
 class Author(models.Model):
     name = models.CharField(max_length=50)
 
