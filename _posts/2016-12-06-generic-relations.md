@@ -33,17 +33,17 @@ And now you are asking yourself: why is this useful? You can simply add more fie
 Yes, this is true in most cases. However, for some specific cases, Generic Relations can be really handy. 
 In our case, we needed the hability to add comments in two apps of our system. We needed the same functionality in different part of the system in a way it would be easy to mantain and without duplicating code: perfect time for Generic Relations.
 
-We started by creating an Comment model such as:
+We started by creating an Comment model such as (Django 1.10):
 
 ```python
-from django.contrib.contenttypes import generic
+from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
 
 class Comment(models.Model):
     content_type = models.ForeignKey(ContentType)
     object_id = models.Charfield(max_length=50)
-    content_object = generic.GenericForeignKey('content_type', 'object_id')
+    content_object = GenericForeignKey('content_type', 'object_id')
     text = models.TextField(blank=True)
 ```
 
